@@ -1,0 +1,584 @@
+<!--:en--><b>GBS Barcode Generator</b>
+
+
+<b><span style="color: red;"> A Major update v2.0 of the barcode generating algorithm has been implemented on 12-6-2012. This results in 100x faster performance, less variation in nucleotide distribution but also a different order and composition of barcodes compared to the previous version (1.0a). If for whatever reason you require output from the previous version, please click the radio-button at the bottom of the form.</span></b>
+
+<form action="/cgi-bin/barcodev2.cgi" method="POST" name="barcodeform">
+<table width="641" border="0" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td align="left" width="323">Enzyme:</td>
+<td align="left" width="404"><select class="combobox" id="combobox" name="Enzyme"><option value="AatII">AatII</option><option value="AbsI">AbsI</option><option value="Acc65I">Acc65I</option><option value="AccB1I">AccB1I</option><option value="AccI">AccI</option><option value="AccIII">AccIII</option><option value="AciI">AciI</option><option value="AclI">AclI</option><option value="AcoI">AcoI</option><option value="AcsI">AcsI</option><option value="AcyI">AcyI</option><option value="AflII">AflII</option><option value="AflIII">AflIII</option><option value="AgeI">AgeI</option><option value="AgsI">AgsI</option><option value="AhlI">AhlI</option><option value="AjnI">AjnI</option><option value="Alw21I">Alw21I</option><option value="Alw44I">Alw44I</option><option value="Ama87I">Ama87I</option><option value="Aor13HI">Aor13HI</option><option value="ApaI">ApaI</option><option value="ApaLI">ApaLI</option><option value="ApeKI">ApeKI</option><option value="ApoI">ApoI</option><option value="AscI">AscI</option><option value="AseI">AseI</option><option value="AsiGI">AsiGI</option><option value="AsiSI">AsiSI</option><option value="Asp718I">Asp718I</option><option value="AspA2I">AspA2I</option><option value="AspLEI">AspLEI</option><option value="AsuC2I">AsuC2I</option><option value="AsuII">AsuII</option><option value="AsuNHI">AsuNHI</option><option value="AvaI">AvaI</option><option value="AvaII">AvaII</option><option value="AvrII">AvrII</option><option value="BaeGI">BaeGI</option><option value="BamHI">BamHI</option><option value="BanI">BanI</option><option value="BanII">BanII</option><option value="BanIII">BanIII</option><option value="BauI">BauI</option><option value="BbeI">BbeI</option><option value="BbuI">BbuI</option><option value="Bbv12I">Bbv12I</option><option value="BbvCI">BbvCI</option><option value="BclI">BclI</option><option value="BcnI">BcnI</option><option value="BcuI">BcuI</option><option value="BfaI">BfaI</option><option value="BfmI">BfmI</option><option value="BfoI">BfoI</option><option value="BfrI">BfrI</option><option value="BfuCI">BfuCI</option><option value="BglII">BglII</option><option value="BlnI">BlnI</option><option value="BlpI">BlpI</option><option value="Bme18I">Bme18I</option><option value="BmeT110I">BmeT110I</option><option value="BmtI">BmtI</option><option value="Bpu14I">Bpu14I</option><option value="BpuMI">BpuMI</option><option value="BpvUI">BpvUI</option><option value="Bsa29I">Bsa29I</option><option value="BsaHI">BsaHI</option><option value="BsaWI">BsaWI</option><option value="Bse118I">Bse118I</option><option value="BseAI">BseAI</option><option value="BseBI">BseBI</option><option value="BseCI">BseCI</option><option value="BsePI">BsePI</option><option value="BseSI">BseSI</option><option value="BseX3I">BseX3I</option><option value="BseYI">BseYI</option><option value="Bsh1285I">Bsh1285I</option><option value="BshNI">BshNI</option><option value="BshTI">BshTI</option><option value="BstEII">BstEII</option><option value="BshVI">BshVI</option><option value="BsiEI">BsiEI</option><option value="BsiHKAI">BsiHKAI</option><option value="BsiHKCI">BsiHKCI</option><option value="BsiSI">BsiSI</option><option value="BsiWI">BsiWI</option><option value="BsoBI">BsoBI</option><option value="Bsp119I">Bsp119I</option><option value="Bsp120I">Bsp120I</option><option value="Bsp1286I">Bsp1286I</option><option value="Bsp13I">Bsp13I</option><option value="Bsp1407I">Bsp1407I</option><option value="Bsp143I">Bsp143I</option><option value="Bsp19I">Bsp19I</option><option value="BspACI">BspACI</option><option value="BspDI">BspDI</option><option value="BspEI">BspEI</option><option value="BspHI">BspHI</option><option value="BspOI">BspOI</option><option value="BspT104I">BspT104I</option><option value="BspT107I">BspT107I</option><option value="BspTI">BspTI</option><option value="BspXI">BspXI</option><option value="BsrFI">BsrFI</option><option value="BsrGI">BsrGI</option><option value="BssAI">BssAI</option><option value="BssHII">BssHII</option><option value="BssMI">BssMI</option><option value="BssNI">BssNI</option><option value="BssSI">BssSI</option><option value="BssT1I">BssT1I</option><option value="Bst2BI">Bst2BI</option><option value="Bst2UI">Bst2UI</option><option value="Bst98I">Bst98I</option><option value="BstACI">BstACI</option><option value="BstAFI">BstAFI</option><option value="BstAUI">BstAUI</option><option value="BstBI">BstBI</option><option value="BstDSI">BstDSI</option><option value="BstH2I">BstH2I</option><option value="BstHHI">BstHHI</option><option value="BstKTI">BstKTI</option><option value="BstMBI">BstMBI</option><option value="BstMCI">BstMCI</option><option value="BstNI">BstNI</option><option value="BstNSI">BstNSI</option><option value="BstOI">BstOI</option><option value="BstSFI">BstSFI</option><option value="BstSLI">BstSLI</option><option value="BstX2I">BstX2I</option><option value="BstYI">BstYI</option><option value="BstZI">BstZI</option><option value="Bsu15I">Bsu15I</option><option value="BsuTUI">BsuTUI</option><option value="BtgI">BtgI</option><option value="CciI">CciI</option><option value="CciNI">CciNI</option><option value="CfoI">CfoI</option><option value="Cfr10I">Cfr10I</option><option value="Cfr42I">Cfr42I</option><option value="Cfr9I">Cfr9I</option><option value="CfrI">CfrI</option><option value="ClaI">ClaI</option><option value="CpoI">CpoI</option><option value="CsiI">CsiI</option><option value="Csp45I">Csp45I</option><option value="Csp6I">Csp6I</option><option value="CspAI">CspAI</option><option value="CspI">CspI</option><option value="CviAII">CviAII</option><option value="CviQI">CviQI</option><option value="DdeI ">DdeI</option><option value="DpnII">DpnII</option><option value="EaeI">EaeI</option><option value="EagI">EagI</option><option value="EclXI">EclXI</option><option value="Eco130I">Eco130I</option><option value="Eco24I">Eco24I</option><option value="Eco47I">Eco47I</option><option value="Eco52I">Eco52I</option><option value="Eco88I">Eco88I</option><option value="EcoRI">EcoRI</option><option value="EcoRII">EcoRII</option><option value="EcoT14I">EcoT14I</option><option value="EcoT22I">EcoT22I</option><option value="EcoT38I">EcoT38I</option><option value="ErhI">ErhI</option><option value="FaeI">FaeI</option><option value="FatI">FatI</option><option value="FauNDI">FauNDI</option><option value="FbaI">FbaI</option><option value="FblI">FblI</option><option value="FriOI">FriOI</option><option value="FseI">FseI</option><option value="FspBI">FspBI</option><option value="GsaI">GsaI</option><option value="HaeII">HaeII</option><option value="HapII">HapII</option><option value="HhaI">HhaI</option><option value="Hin1I">Hin1I</option><option value="Hin1II">Hin1II</option><option value="Hin6I">Hin6I</option><option value="HindIII">HindIII</option><option value="HinP1I">HinP1I</option><option value="HpaII">HpaII</option><option value="Hpy99I">Hpy99I</option><option value="HpyCH4IV">HpyCH4IV</option><option value="Hsp92I">Hsp92I</option><option value="Hsp92II">Hsp92II</option><option value="HspAI">HspAI</option><option value="KasI">KasI</option><option value="KflI">KflI</option><option value="Kpn2I">Kpn2I</option><option value="KpnI">KpnI</option><option value="Ksp22I">Ksp22I</option><option value="KspI">KspI</option><option value="Kzo9I">Kzo9I</option><option value="MabI">MabI</option><option value="MaeI">MaeI</option><option value="MaeII">MaeII</option><option value="MauBI">MauBI</option><option value="MboI">MboI</option><option value="MfeI">MfeI</option><option value="MflI">MflI</option><option value="MhlI">MhlI</option><option value="MluI">MluI</option><option value="Mly113I">Mly113I</option><option value="Mph1103I">Mph1103I</option><option value="MreI">MreI</option><option value="MroI">MroI</option><option value="MroNI">MroNI</option><option value="MseI">MseI</option><option value="MspCI">MspCI</option><option value="MspI">MspI</option><option value="MunI">MunI</option><option value="MvaI">MvaI</option><option value="MvrI">MvrI</option><option value="NarI">NarI</option><option value="NciI">NciI</option><option value="NcoI">NcoI</option><option value="NdeI">NdeI</option><option value="NdeII">NdeII</option><option value="NgoMIV">NgoMIV</option><option value="NheI">NheI</option><option value="NlaIII">NlaIII</option><option value="NmuCI">NmuCI</option><option value="NotI">NotI</option><option value="NsiI">NsiI</option><option value="NspI">NspI</option><option value="NspV">NspV</option><option value="PacI">PacI</option><option value="PaeI">PaeI</option><option value="PaeR7I">PaeR7I</option><option value="PagI">PagI</option><option value="PalAI">PalAI</option><option value="PasI">PasI</option><option value="PauI">PauI</option><option value="PciI">PciI</option><option value="PfeI">PfeI</option><option value="Pfl23II">Pfl23II</option><option value="PinAI">PinAI</option><option value="Ple19I">Ple19I</option><option value="PpuMI">PpuMI</option><option value="PscI">PscI</option><option value="PshBI">PshBI</option><option value="Psp124BI">Psp124BI</option><option value="Psp1406I">Psp1406I</option><option value="Psp5II">Psp5II</option><option value="Psp6I">Psp6I</option><option value="PspGI">PspGI</option><option value="PspLI">PspLI</option><option value="PspOMI">PspOMI</option><option value="PspPPI">PspPPI</option><option value="PspXI">PspXI</option><option selected="selected" value="PstI">PstI</option><option value="PsuI">PsuI</option><option value="PteI">PteI</option><option value="PvuI">PvuI</option><option value="RcaI">RcaI</option><option value="RgaI">RgaI</option><option value="RigI">RigI</option><option value="RsaNI">RsaNI</option><option value="Rsr2I">Rsr2I</option><option value="RsrII">RsrII</option><option value="SacI">SacI</option><option value="SacII">SacII</option><option value="SalI">SalI</option><option value="SanDI">SanDI</option><option value="SaqAI">SaqAI</option><option value="Sau3AI">Sau3AI</option><option value="SbfI">SbfI</option><option value="SdaI">SdaI</option><option value="SduI">SduI</option><option value="SetI">SetI</option><option value="SexAI">SexAI</option><option value="SfaAI">SfaAI</option><option value="SfcI">SfcI</option><option value="Sfr274I">Sfr274I</option><option value="Sfr303I">Sfr303I</option><option value="SfuI">SfuI</option><option value="SgfI">SgfI</option><option value="SgrAI">SgrAI</option><option value="SgrBI">SgrBI</option><option value="SgrDI">SgrDI</option><option value="SgsI">SgsI</option><option value="SinI">SinI</option><option value="SlaI">SlaI</option><option value="SmlI">SmlI</option><option value="SmoI">SmoI</option><option value="SpeI">SpeI</option><option value="SphI">SphI</option><option value="Sse8387I">Sse8387I</option><option value="Sse9I">Sse9I</option><option value="SsiI">SsiI</option><option value="SspDI">SspDI</option><option value="SstI">SstI</option><option value="SstII">SstII</option><option value="StrI">StrI</option><option value="StyI">StyI</option><option value="TaiI">TaiI</option><option value="TaqI">TaqI</option><option value="TatI">TatI</option><option value="TauI">TauI</option><option value="TfiI">TfiI</option><option value="TliI">TliI</option><option value="Tru1I">Tru1I</option><option value="Tru9I">Tru9I</option><option value="TseI">TseI</option><option value="Tsp45I">Tsp45I</option><option value="Tsp509I">Tsp509I</option><option value="TspEI">TspEI</option><option value="TspMI">TspMI</option><option value="Vha464I">Vha464I</option><option value="VneI">VneI</option><option value="VpaK11BI">VpaK11BI</option><option value="VspI">VspI</option><option value="XapI">XapI</option><option value="XbaI">XbaI</option><option value="XceI">XceI</option><option value="XhoI">XhoI</option><option value="XhoII">XhoII</option><option value="XmaCI">XmaCI</option><option value="XmaI">XmaI</option><option value="XmaJI">XmaJI</option><option value="XmiI">XmiI</option><option value="XspI">XspI</option><option value="Zsp2I">Zsp2I</option></select>
+<div class="errorForm" id="enzyme-error" style="display: none;"></div></td>
+</tr>
+<tr>
+<td align="left">Barcodes required</td>
+<td align="left"><input id="number" onmouseover="test" onkeyup="return forBarcodeRequired(this)" type="text" name="number" size="4" value="96" onblur="return forBarcodeRequired(this)" />
+<div class="errorForm" id="msb" style="display: none;"></div></td>
+</tr>
+<tr>
+<td align="left">Minimum Barcode length</td>
+<td align="left"><input class="required" id="minbl" onkeyup="return forMinimumBarcodelength(this)" type="text" name="min" size="1" value="4" onblur="return forMinimumBarcodelength(this)" />
+<div class="errorForm" id="minblmsg" style="display: none;"></div></td>
+</tr>
+<tr>
+<td align="left">Maximum Barcode length</td>
+<td align="left"><input id="maxbl" type="text" name="max" size="1" value="9" /> <!--class="required" minlength="10" onkeyup="return forMaximumBarcodelength(this)" onblur="return forMaximumBarcodelength(this)" /--><!--div class="errorForm" id="maxblmsg" style="display:none"></div--></td>
+</tr>
+<tr>
+<td align="left">Homopolymer threshold</td>
+<td align="left"><input class="required" id="mono_nt" onkeyup="return forHomopolymerThreshold(this)" type="text" name="mono_nt" size="1" value="2" onblur="return forHomopolymerThreshold(this)" />
+<div class="errorForm" id="mono_ntmsg" style="display: none;"></div></td>
+</tr>
+<tr>
+<td align="left">Coding strand Adapter (+)</td>
+<td align="left"><input class="alphaonly" id="ad_seq" onkeyup="return forCDSA(this)" type="text" name="ad_seq" size="50" value="ACACTCTTTCCCTACACGACGCTCTTCCGATCT" onblur="return forCDSA(this)" />
+<div class="errorForm" id="cdsamsg" style="display: none;"></div></td>
+</tr>
+<tr>
+<td align="left">Common strand Adapter (+)</td>
+<td align="left"><input class="alphaonly" id="cmsa" onkeyup="return forCMSA(this)" type="text" name="cm_ad_seq" size="50" value="AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAG" onblur="return forCMSA(this)" />
+<div class="errorForm" id="cmsamsg" style="display: none;"></div></td>
+</tr>
+<tr>
+<td colspan="2" align="left" height="31"><strong>Please provide your details here to obtain the barcodes:</strong></td>
+</tr>
+<tr>
+<td align="left">Your name</td>
+<td align="left"><input id="name" onkeyup="return forYourName(this)" type="text" name="name" placeholder="Please provide full name" size="50" onblur="return forYourName(this)" />
+<div class="errorForm" id="namemsg" style="display: none;"></div></td>
+</tr>
+<tr>
+<td align="left">e-mail address</td>
+<td align="left"><input id="email" onkeyup="return forEmail(this)" type="text" name="email" placeholder="Provide your institute e-mail" size="50" onblur="return forEmail(this)" />
+<div class="errorForm" id="emailmsg" style="display: none;"></div></td>
+</tr>
+<tr>
+<td align="left">Organization</td>
+<td align="left"><input id="organization" onkeyup="return forOrganization(this)" type="text" name="organization" placeholder="Please provide organization name" size="50" onblur="return forOrganization(this)" />
+<div class="errorForm" id="organizationmsg" style="display: none;"></div></td>
+</tr>
+<tr>
+<td align="left">Use old version</td>
+<td align="left"><input onclick="document.barcodeform.action=&quot;/cgi-bin/barcode.cgi&quot;" type="radio" value="/cgi-bin/barcode.cgi" /></td>
+</tr>
+<tr>
+<td colspan="2" align="left" height="55">
+<table width="100%" border="0" cellspacing="2" cellpadding="0">
+<tbody>
+<tr>
+<td width="6%"><input id="agree" type="checkbox" name="agree" value="ok" onchange="check();" /></td>
+<td width="71%">I have read and agree with the <a href="http://www.deenabio.com/gbs-license">terms and condictions</a> for GBS barcoded adapter use</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center" height="47">
+<table width="69%" border="0" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td><input id="submit" onclick="return myvalid()" type="submit" disabled="disabled" name="submit" value="Receive Barcodes" /></td>
+<td><input type="reset" value="Reset form" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center" height="27"></td>
+</tr>
+</tbody>
+</table>
+</form>
+<p align="left">Genotyping by sequencing (GBS) is a simple highly-multiplexed system for constructing reduced representation libraries for the Illumina next-generation sequencing platform developed in the <a title="Genotyping by Sequencing" href="http://www.maizegenetics.net/Table/Genotyping-by-Sequencing/" target="_blank">Buckler Lab</a> at Cornell. Key components of the system are: reduced sample handling, fewer PCR and purification steps, no size fractionation and inexpensive barcoding. They use restriction enzymes to reduce genome complexity and avoid the repetitive fraction of the genome.</p>
+A <a title="Genotyping By Sequencing publication" href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0019379" target="_blank">paper</a> on the technique is published by Elshire <em>et al</em> in PLOS-One. More information on the method and the authors can be found <a title="Buckler lab Genotyping By Sequencing" href="http://www.maizegenetics.net/Table/Genotyping-by-Sequencing/" target="_blank">here</a>.
+
+One of the difficulties in developing this technology was the complexity of generating a lot of barcodes that generate high quality libraries. Since the sequenced fragments all contain an enzyme recognition site this leads to identical nucleotides directly after the barcode if one uses one length of barcodes.
+
+I followed a course at the Buckler lab in 2011. I decided to contribute by developing a script for generating Barcoded adapters satisfying the following criteria:
+<div align="left">
+<ul>
+	<li>Barcodes ( ligated to rescriction fragments) do not recreate enzyme restriction site.</li>
+	<li>Every barcode differs from all other barcodes by at least 3 mutational steps.</li>
+	<li>Barcodes can be modulated in length between 4 and 10 (possibly more) bases.</li>
+	<li>The balance of nucleotides at every position in the barcodes is maintained as much as possible.</li>
+	<li>Mononucleotide runs are not allowed by default. The threshold can be set by a parameter.</li>
+	<li>Smaller Barcodes do not nest in larger barcodes, thus avoiding confusion in downstream bioinformatics.</li>
+	<li>The script produces an identical output for identical queries, thus allowing for standardization across labs</li>
+</ul>
+&nbsp;
+
+</div>
+<div align="left">
+
+Generating Barcodes usually takes less than 5 minutes. It is mainly dependent on the number of possible combinations of barcodes as determined by the maximum barcode length. The script has been tested for barcodes up to length 10.
+
+Please file tickets for all possible bugs and feature requests
+
+For question and comments:
+
+<script type="text/javascript">// <![CDATA[
+var ppclink = "E-mail me";
+var ppcname = "thomas";
+var ppchost = "deenabio.com";
+document.write("<a href=" + "mail" + "to:" + ppcname + "@" + ppchost + "?subject=GBS-script>" + ppclink + "</a>")
+// ]]></script>
+<!-- AddThis Button BEGIN -->
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d8888a5386f5ab2"></script>
+<!-- AddThis Button END -->
+DISCLAIMER
+This software is provided "as is," without warranty of any kind, express or implied. In no event shall Deena Bioinformatics or Thomas van Gurp be held liable for any direct, indirect, incidental, special or consequential damages arising out of the use of or inability to use this software.
+
+</div><!--:--><!--:nl--><b>GBS Barcode Generator</b>
+<br>
+<b><font color=red> A Major update v2.0 of the barcode generating algorithm has been implemented on 12-6-2012. This results in 100x faster performance, less variation in nucleotide distribution but also a different order and composition of barcodes compared to the previous version (1.0a). If for whatever reason you require output from the previous version, please click the radio-button at the bottom of the form.</font></b>
+<form method="POST" name="barcodeform" action="/cgi-bin/barcodev2.cgi">
+<table width="641" height="618" border="0" align="center" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td width="323" align="left">Enzyme:</td>
+<td width="404" align="left">
+<select class="combobox" name="Enzyme" id="combobox">
+<option value="AatII">AatII</option>
+<option value="AbsI">AbsI</option>
+<option value="Acc65I">Acc65I</option>
+<option value="AccB1I">AccB1I</option>
+<option value="AccI">AccI</option>
+<option value="AccIII">AccIII</option>
+<option value="AciI">AciI</option>
+<option value="AclI">AclI</option>
+<option value="AcoI">AcoI</option>
+<option value="AcsI">AcsI</option>
+<option value="AcyI">AcyI</option>
+<option value="AflII">AflII</option>
+<option value="AflIII">AflIII</option>
+<option value="AgeI">AgeI</option>
+<option value="AgsI">AgsI</option>
+<option value="AhlI">AhlI</option>
+<option value="AjnI">AjnI</option>
+<option value="Alw21I">Alw21I</option>
+<option value="Alw44I">Alw44I</option>
+<option value="Ama87I">Ama87I</option>
+<option value="Aor13HI">Aor13HI</option>
+<option value="ApaI">ApaI</option>
+<option value="ApaLI">ApaLI</option>
+<option value="ApeKI">ApeKI</option>
+<option value="ApoI">ApoI</option>
+<option value="AscI">AscI</option>
+<option value="AseI">AseI</option>
+<option value="AsiGI">AsiGI</option>
+<option value="AsiSI">AsiSI</option>
+<option value="Asp718I">Asp718I</option>
+<option value="AspA2I">AspA2I</option>
+<option value="AspLEI">AspLEI</option>
+<option value="AsuC2I">AsuC2I</option>
+<option value="AsuII">AsuII</option>
+<option value="AsuNHI">AsuNHI</option>
+<option value="AvaI">AvaI</option>
+<option value="AvaII">AvaII</option>
+<option value="AvrII">AvrII</option>
+<option value="BaeGI">BaeGI</option>
+<option value="BamHI">BamHI</option>
+<option value="BanI">BanI</option>
+<option value="BanII">BanII</option>
+<option value="BanIII">BanIII</option>
+<option value="BauI">BauI</option>
+<option value="BbeI">BbeI</option>
+<option value="BbuI">BbuI</option>
+<option value="Bbv12I">Bbv12I</option>
+<option value="BbvCI">BbvCI</option>
+<option value="BclI">BclI</option>
+<option value="BcnI">BcnI</option>
+<option value="BcuI">BcuI</option>
+<option value="BfaI">BfaI</option>
+<option value="BfmI">BfmI</option>
+<option value="BfoI">BfoI</option>
+<option value="BfrI">BfrI</option>
+<option value="BfuCI">BfuCI</option>
+<option value="BglII">BglII</option>
+<option value="BlnI">BlnI</option>
+<option value="Bme18I">Bme18I</option>
+<option value="BmeT110I">BmeT110I</option>
+<option value="BmtI">BmtI</option>
+<option value="Bpu14I">Bpu14I</option>
+<option value="BpuMI">BpuMI</option>
+<option value="BpvUI">BpvUI</option>
+<option value="Bsa29I">Bsa29I</option>
+<option value="BsaHI">BsaHI</option>
+<option value="BsaWI">BsaWI</option>
+<option value="Bse118I">Bse118I</option>
+<option value="BseAI">BseAI</option>
+<option value="BseBI">BseBI</option>
+<option value="BseCI">BseCI</option>
+<option value="BsePI">BsePI</option>
+<option value="BseSI">BseSI</option>
+<option value="BseX3I">BseX3I</option>
+<option value="BseYI">BseYI</option>
+<option value="Bsh1285I">Bsh1285I</option>
+<option value="BshNI">BshNI</option>
+<option value="BshTI">BshTI</option>
+<option value="BshVI">BshVI</option>
+<option value="BsiEI">BsiEI</option>
+<option value="BsiHKAI">BsiHKAI</option>
+<option value="BsiHKCI">BsiHKCI</option>
+<option value="BsiSI">BsiSI</option>
+<option value="BsiWI">BsiWI</option>
+<option value="BsoBI">BsoBI</option>
+<option value="Bsp119I">Bsp119I</option>
+<option value="Bsp120I">Bsp120I</option>
+<option value="Bsp1286I">Bsp1286I</option>
+<option value="Bsp13I">Bsp13I</option>
+<option value="Bsp1407I">Bsp1407I</option>
+<option value="Bsp143I">Bsp143I</option>
+<option value="Bsp19I">Bsp19I</option>
+<option value="BspACI">BspACI</option>
+<option value="BspDI">BspDI</option>
+<option value="BspEI">BspEI</option>
+<option value="BspHI">BspHI</option>
+<option value="BspOI">BspOI</option>
+<option value="BspT104I">BspT104I</option>
+<option value="BspT107I">BspT107I</option>
+<option value="BspTI">BspTI</option>
+<option value="BspXI">BspXI</option>
+<option value="BsrFI">BsrFI</option>
+<option value="BsrGI">BsrGI</option>
+<option value="BssAI">BssAI</option>
+<option value="BssHII">BssHII</option>
+<option value="BssMI">BssMI</option>
+<option value="BssNI">BssNI</option>
+<option value="BssSI">BssSI</option>
+<option value="BssT1I">BssT1I</option>
+<option value="Bst2BI">Bst2BI</option>
+<option value="Bst2UI">Bst2UI</option>
+<option value="Bst98I">Bst98I</option>
+<option value="BstACI">BstACI</option>
+<option value="BstAFI">BstAFI</option>
+<option value="BstAUI">BstAUI</option>
+<option value="BstBI">BstBI</option>
+<option value="BstDSI">BstDSI</option>
+<option value="BstH2I">BstH2I</option>
+<option value="BstHHI">BstHHI</option>
+<option value="BstKTI">BstKTI</option>
+<option value="BstMBI">BstMBI</option>
+<option value="BstMCI">BstMCI</option>
+<option value="BstNI">BstNI</option>
+<option value="BstNSI">BstNSI</option>
+<option value="BstOI">BstOI</option>
+<option value="BstSFI">BstSFI</option>
+<option value="BstSLI">BstSLI</option>
+<option value="BstX2I">BstX2I</option>
+<option value="BstYI">BstYI</option>
+<option value="BstZI">BstZI</option>
+<option value="Bsu15I">Bsu15I</option>
+<option value="BsuTUI">BsuTUI</option>
+<option value="BtgI">BtgI</option>
+<option value="CciI">CciI</option>
+<option value="CciNI">CciNI</option>
+<option value="CfoI">CfoI</option>
+<option value="Cfr10I">Cfr10I</option>
+<option value="Cfr42I">Cfr42I</option>
+<option value="Cfr9I">Cfr9I</option>
+<option value="CfrI">CfrI</option>
+<option value="ClaI">ClaI</option>
+<option value="CpoI">CpoI</option>
+<option value="CsiI">CsiI</option>
+<option value="Csp45I">Csp45I</option>
+<option value="Csp6I">Csp6I</option>
+<option value="CspAI">CspAI</option>
+<option value="CspI">CspI</option>
+<option value="CviAII">CviAII</option>
+<option value="CviQI">CviQI</option>
+<option value="DpnII">DpnII</option>
+<option value="EaeI">EaeI</option>
+<option value="EagI">EagI</option>
+<option value="EclXI">EclXI</option>
+<option value="Eco130I">Eco130I</option>
+<option value="Eco24I">Eco24I</option>
+<option value="Eco47I">Eco47I</option>
+<option value="Eco52I">Eco52I</option>
+<option value="Eco88I">Eco88I</option>
+<option value="EcoRI">EcoRI</option>
+<option value="EcoRII">EcoRII</option>
+<option value="EcoT14I">EcoT14I</option>
+<option value="EcoT22I">EcoT22I</option>
+<option value="EcoT38I">EcoT38I</option>
+<option value="ErhI">ErhI</option>
+<option value="FaeI">FaeI</option>
+<option value="FatI">FatI</option>
+<option value="FauNDI">FauNDI</option>
+<option value="FbaI">FbaI</option>
+<option value="FblI">FblI</option>
+<option value="FriOI">FriOI</option>
+<option value="FseI">FseI</option>
+<option value="FspBI">FspBI</option>
+<option value="GsaI">GsaI</option>
+<option value="HaeII">HaeII</option>
+<option value="HapII">HapII</option>
+<option value="HhaI">HhaI</option>
+<option value="Hin1I">Hin1I</option>
+<option value="Hin1II">Hin1II</option>
+<option value="Hin6I">Hin6I</option>
+<option value="HindIII">HindIII</option>
+<option value="HinP1I">HinP1I</option>
+<option value="HpaII">HpaII</option>
+<option value="Hpy99I">Hpy99I</option>
+<option value="HpyCH4IV">HpyCH4IV</option>
+<option value="Hsp92I">Hsp92I</option>
+<option value="Hsp92II">Hsp92II</option>
+<option value="HspAI">HspAI</option>
+<option value="KasI">KasI</option>
+<option value="KflI">KflI</option>
+<option value="Kpn2I">Kpn2I</option>
+<option value="KpnI">KpnI</option>
+<option value="Ksp22I">Ksp22I</option>
+<option value="KspI">KspI</option>
+<option value="Kzo9I">Kzo9I</option>
+<option value="MabI">MabI</option>
+<option value="MaeI">MaeI</option>
+<option value="MaeII">MaeII</option>
+<option value="MauBI">MauBI</option>
+<option value="MboI">MboI</option>
+<option value="MfeI">MfeI</option>
+<option value="MflI">MflI</option>
+<option value="MhlI">MhlI</option>
+<option value="MluI">MluI</option>
+<option value="Mly113I">Mly113I</option>
+<option value="Mph1103I">Mph1103I</option>
+<option value="MreI">MreI</option>
+<option value="MroI">MroI</option>
+<option value="MroNI">MroNI</option>
+<option value="MseI">MseI</option>
+<option value="MspCI">MspCI</option>
+<option value="MspI">MspI</option>
+<option value="MunI">MunI</option>
+<option value="MvaI">MvaI</option>
+<option value="MvrI">MvrI</option>
+<option value="NarI">NarI</option>
+<option value="NciI">NciI</option>
+<option value="NcoI">NcoI</option>
+<option value="NdeI">NdeI</option>
+<option value="NdeII">NdeII</option>
+<option value="NgoMIV">NgoMIV</option>
+<option value="NheI">NheI</option>
+<option value="NlaIII">NlaIII</option>
+<option value="NmuCI">NmuCI</option>
+<option value="NotI">NotI</option>
+<option value="NsiI">NsiI</option>
+<option value="NspI">NspI</option>
+<option value="NspV">NspV</option>
+<option value="PacI">PacI</option>
+<option value="PaeI">PaeI</option>
+<option value="PaeR7I">PaeR7I</option>
+<option value="PagI">PagI</option>
+<option value="PalAI">PalAI</option>
+<option value="PasI">PasI</option>
+<option value="PauI">PauI</option>
+<option value="PciI">PciI</option>
+<option value="PfeI">PfeI</option>
+<option value="Pfl23II">Pfl23II</option>
+<option value="PinAI">PinAI</option>
+<option value="Ple19I">Ple19I</option>
+<option value="PpuMI">PpuMI</option>
+<option value="PscI">PscI</option>
+<option value="PshBI">PshBI</option>
+<option value="Psp124BI">Psp124BI</option>
+<option value="Psp1406I">Psp1406I</option>
+<option value="Psp5II">Psp5II</option>
+<option value="Psp6I">Psp6I</option>
+<option value="PspGI">PspGI</option>
+<option value="PspLI">PspLI</option>
+<option value="PspOMI">PspOMI</option>
+<option value="PspPPI">PspPPI</option>
+<option value="PspXI">PspXI</option>
+<option selected="selected" value="PstI">PstI</option>
+<option value="PsuI">PsuI</option>
+<option value="PteI">PteI</option>
+<option value="PvuI">PvuI</option>
+<option value="RcaI">RcaI</option>
+<option value="RgaI">RgaI</option>
+<option value="RigI">RigI</option>
+<option value="RsaNI">RsaNI</option>
+<option value="Rsr2I">Rsr2I</option>
+<option value="RsrII">RsrII</option>
+<option value="SacI">SacI</option>
+<option value="SacII">SacII</option>
+<option value="SalI">SalI</option>
+<option value="SanDI">SanDI</option>
+<option value="SaqAI">SaqAI</option>
+<option value="Sau3AI">Sau3AI</option>
+<option value="SbfI">SbfI</option>
+<option value="SdaI">SdaI</option>
+<option value="SduI">SduI</option>
+<option value="SetI">SetI</option>
+<option value="SexAI">SexAI</option>
+<option value="SfaAI">SfaAI</option>
+<option value="SfcI">SfcI</option>
+<option value="Sfr274I">Sfr274I</option>
+<option value="Sfr303I">Sfr303I</option>
+<option value="SfuI">SfuI</option>
+<option value="SgfI">SgfI</option>
+<option value="SgrAI">SgrAI</option>
+<option value="SgrBI">SgrBI</option>
+<option value="SgrDI">SgrDI</option>
+<option value="SgsI">SgsI</option>
+<option value="SinI">SinI</option>
+<option value="SlaI">SlaI</option>
+<option value="SmlI">SmlI</option>
+<option value="SmoI">SmoI</option>
+<option value="SpeI">SpeI</option>
+<option value="SphI">SphI</option>
+<option value="Sse8387I">Sse8387I</option>
+<option value="Sse9I">Sse9I</option>
+<option value="SsiI">SsiI</option>
+<option value="SspDI">SspDI</option>
+<option value="SstI">SstI</option>
+<option value="SstII">SstII</option>
+<option value="StrI">StrI</option>
+<option value="StyI">StyI</option>
+<option value="TaiI">TaiI</option>
+<option value="TaqI">TaqI</option>
+<option value="TatI">TatI</option>
+<option value="TauI">TauI</option>
+<option value="TfiI">TfiI</option>
+<option value="TliI">TliI</option>
+<option value="Tru1I">Tru1I</option>
+<option value="Tru9I">Tru9I</option>
+<option value="TseI">TseI</option>
+<option value="Tsp45I">Tsp45I</option>
+<option value="Tsp509I">Tsp509I</option>
+<option value="TspEI">TspEI</option>
+<option value="TspMI">TspMI</option>
+<option value="Vha464I">Vha464I</option>
+<option value="VneI">VneI</option>
+<option value="VpaK11BI">VpaK11BI</option>
+<option value="VspI">VspI</option>
+<option value="XapI">XapI</option>
+<option value="XbaI">XbaI</option>
+<option value="XceI">XceI</option>
+<option value="XhoI">XhoI</option>
+<option value="XhoII">XhoII</option>
+
+<option value="XmaCI">XmaCI</option>
+<option value="XmaI">XmaI</option>
+<option value="XmaJI">XmaJI</option>
+<option value="XmiI">XmiI</option>
+<option value="XspI">XspI</option>
+<option value="Zsp2I">Zsp2I</option>
+</select>
+<div class="errorForm" id="enzyme-error" style="display:none"></div>
+</td>
+</tr>
+<tr>
+<td align="left">Barcodes required</td>
+<td align="left"><input type="text" name="number" id="number" value="96" size="4" onmouseover="test" onkeyup="return forBarcodeRequired(this)" onblur="return forBarcodeRequired(this)" /><div class="errorForm" id="msb" style="display:none"></div></td>
+</tr>
+<tr>
+<td align="left">Minimum Barcode length</td>
+<td align="left"><input type="text" name="min" id="minbl" value="4" size="1" class="required" minlength="7" onkeyup="return forMinimumBarcodelength(this)" onblur="return forMinimumBarcodelength(this)" /><div class="errorForm" id="minblmsg" style="display:none"></div></td>
+</tr>
+<tr>
+<td align="left">Maximum Barcode length</td>
+<td align="left"><input type="text" name="max" id="maxbl"value="9" size="1"> <!--class="required" minlength="10" onkeyup="return forMaximumBarcodelength(this)" onblur="return forMaximumBarcodelength(this)" /--><!--div class="errorForm" id="maxblmsg" style="display:none"></div--></td>
+</tr>
+<tr>
+<td align="left">Homopolymer threshold</td>
+<td align="left"><input type="text" name="mono_nt" id="mono_nt" value="2" size="1" class="required" minlength="5" onkeyup="return forHomopolymerThreshold(this)" onblur="return forHomopolymerThreshold(this)" /><div class="errorForm" id="mono_ntmsg" style="display:none"></div></td>
+</tr>
+<tr>
+<td align="left">Coding strand Adapter (+)</td>
+<td align="left">
+<input type="text" name="ad_seq" id="ad_seq" class="alphaonly" size="50" value="ACACTCTTTCCCTACACGACGCTCTTCCGATCT" onkeyup="return forCDSA(this)" onblur="return forCDSA(this)"><div class="errorForm" id="cdsamsg" style="display:none"></div>
+</td>
+</tr>
+<tr>
+<td align="left">Common strand Adapter (+)</td>
+<td align="left">
+<input type="text" name="cm_ad_seq" id="cmsa" class="alphaonly" size="50" value="AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAG" onkeyup="return forCMSA(this)" onblur="return forCMSA(this)"><div class="errorForm" id="cmsamsg" style="display:none"></div>
+</td>
+</tr>
+<tr>
+  <td height="31" colspan="2" align="left"><strong>Please provide your details here to obtain the barcodes:</strong></td>
+  </tr>
+<tr>
+<td align="left">Your name</td>
+<td align="left"><input type="text" name="name" id="name" size="50"  placeholder="Please provide full name" onkeyup="return forYourName(this)" onblur="return forYourName(this)" /><div class="errorForm" id="namemsg" style="display:none"></div></td>
+</tr>
+<tr>
+<td align="left">e-mail address</td>
+<td align="left">
+
+<input type="text" name="email" id="email" size="50" placeholder="Provide your institute e-mail" onkeyup="return forEmail(this)" onblur="return forEmail(this)" /><div class="errorForm" id="emailmsg" style="display:none"></div></td>
+</tr>
+<tr>
+  <td align="left">Organization</td>
+  <td align="left"><input type="text" name="organization" id="organization" size="50" placeholder="Please provide organization name" onblur="return forOrganization(this)" onkeyup="return forOrganization(this)" /><div class="errorForm" id="organizationmsg" style="display:none"></div></td>
+</tr>
+<tr>
+  <td align="left">Use old version</td>
+  <td align="left"><input type="radio" value="/cgi-bin/barcode.cgi" onClick=document.barcodeform.action="/cgi-bin/barcode.cgi"></td>
+</tr>
+<tr>
+  <td height="55" colspan="2" align="left"><table width="100%" border="0" cellspacing="2" cellpadding="0">
+    <tr>
+      <td width="6%"><input onchange="check();" id="agree" type="checkbox" value="ok" name="agree" />      </td>
+      <td width="71%"> I have read and agree with the <a href="http://www.deenabio.com/gbs-license">terms and condictions</a> for GBS barcoded adapter use</td>
+    </tr>
+  </table></td>
+  </tr>
+<tr>
+  <td height="47" colspan="2" align="center"><table width="69%" border="0" cellspacing="0" cellpadding="2">
+    <tr>
+      <td><input type="submit" disabled="true" name="submit" id="submit" value="Receive Barcodes" onclick="return myvalid()" /></td>
+      <td><input type="reset" value="Reset form" /></td>
+    </tr>
+  </table>    
+    </td>
+</tr>
+<tr>
+  <td height="27" colspan="2" align="center"> </td>
+  </tr>
+</tbody>
+</table>
+</form>
+<p align="left">Genotyping by sequencing (GBS) is a simple highly-multiplexed system for constructing reduced representation libraries for the Illumina next-generation sequencing platform developed in the <a title="Genotyping by Sequencing" href="http://www.maizegenetics.net/Table/Genotyping-by-Sequencing/" target="_blank">Buckler Lab</a> at Cornell. Key components of the system are: reduced sample handling, fewer PCR and purification steps, no size fractionation and inexpensive barcoding. They use restriction enzymes to reduce genome complexity and avoid the repetitive fraction of the genome.
+
+A <a title="Genotyping By Sequencing publication" href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0019379" target="_blank">paper</a> on the technique is published by Elshire <em>et al</em> in PLOS-One. More information on the method  and the authors can be found <a title="Buckler lab Genotyping By Sequencing" href="http://www.maizegenetics.net/Table/Genotyping-by-Sequencing/" target="_blank">here</a>.
+
+One of the difficulties in developing this technology was the complexity of generating a lot of barcodes that generate high quality libraries. Since the sequenced fragments all contain an enzyme recognition site this leads to identical nucleotides directly after the barcode if one uses one length of barcodes.
+
+In the context of <a title="Personal page NIOO" href="http://www.nioo.knaw.nl/users/thomasg" target="_blank">my PhD project</a> at <a title="NIOO-KNAW" href="http://www.nioo.knaw.nl/en/node/12" target="_blank">NIOO KNAW</a> I followed a course at the Buckler lab. I decided to contribute by developing a script for generating Barcoded adapters satisfying the following criteria:</p>
+<div align="left">
+<ul>
+<li>Barcodes ( ligated to rescriction fragments) do not recreate enzyme restriction site.</li>
+<li>Every barcode differs from all other barcodes by at least 3 mutational steps.</li>
+<li>Barcodes can be modulated in length between 4 and 10 (possibly more) bases.</li>
+<li>The balance of nucleotides at every position in the barcodes is maintained as much as possible.</li>
+<li>Mononucleotide runs are not allowed by default. The threshold can be set by a parameter.</li>
+<li>Smaller Barcodes do not nest in larger barcodes, thus avoiding confusion in downstream bioinformatics.</li>
+<li>The script produces an identical output for identical queries, thus allowing for standardization across labs</li>
+</ul>
+<BR>
+</div>
+<div align="left">Generating Barcodes usually takes less than 5 minutes. It is mainly dependent on the number of possible combinations of barcodes as determined by the maximum barcode length. The script has been tested for barcodes up to length 10.
+
+Please file tickets for all possible bugs and feature requests <a title="Create Issue in Repository" href="https://bitbucket.org/thomasvangurp/adapter-design-gbs/issues/new" target="_blank">here</a>.
+
+For question and comments:
+
+<script type="text/javascript">// <![CDATA[
+var ppclink = "E-mail me";
+var ppcname = "thomas";
+var ppchost = "deenabio.com";
+document.write("<a href=" + "mail" + "to:" + ppcname + "@" + ppchost + "?subject=GBS-script>" + ppclink + "</a>")
+// ]]></script>
+<!-- AddThis Button BEGIN -->
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d8888a5386f5ab2"></script>
+<!-- AddThis Button END -->
+DISCLAIMER
+This software is provided "as is," without warranty of any kind, express or implied. In no event shall Deena Bioinformatics or Thomas van Gurp be held liable for any direct, indirect, incidental, special or consequential damages arising out of the use of or inability to use this software.
+
+</div><!--:-->
